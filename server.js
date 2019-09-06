@@ -4,13 +4,15 @@
  * Module dependencies.
  */
 
-var app = require('./app');
+var { createApp } = require('./app');
 var debug = require('debug')('thung-thong:server');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
+
+const app  = createApp()
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);

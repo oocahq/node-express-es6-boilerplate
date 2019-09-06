@@ -4,7 +4,7 @@ services:
     api:
         build:
             context: .
-            dockerfile: ./Dockerfile
+            dockerfile: ./docker/app/Dockerfile
         networks:
             - backend
         restart: always

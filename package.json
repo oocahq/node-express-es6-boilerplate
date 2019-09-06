@@ -3,16 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "server": "babel-node server.js",
-    "server:prod": "node server.js",
-    "dev": "NODE_ENV=development npm-run-all server",
+    "server": "babel-node ./server.js",
+    "server:prod": "node ./server.js",
+    "dev": "./node_modules/nodemon/bin/nodemon.js --exec babel-node --presets @babel/preset-env ./server.js",
     "clean": "rimraf dist",
     "prod": "NODE_ENV=production npm-run-all clean build server:prod",
-    "watch": "./node_modules/nodemon/bin/nodemon.js",
     "build": "babel --ignore node_modules,dist -d ./dist . -s",
-    "start:dev": "./node_modules/nodemon/bin/nodemon.js --exec babel-node --presets env server.js",
+    "watch": "./node_modules/nodemon/bin/nodemon.js --exec babel-node --presets @babel/preset-env ./server.js",
     "start": "node ./dist/server.js",
-    "test": "NODE_ENV=test ./node_modules/.bin/mocha --require @babel/register --diff --recursive ./src"
+    "test": "FIREBASE_CERT=./service-account.dev.json NODE_ENV=test ./node_modules/.bin/mocha --require @babel/register --diff --recursive ./app"
   },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
@@ -49,5 +48,8 @@
     "nodemon": "^1.19.2",
     "npm-run-all": "^4.1.5",
     "sinon": "^7.4.2"
+  },
+  "directories": {
+    "test": "tests"
   }
 }

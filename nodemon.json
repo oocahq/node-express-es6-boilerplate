@@ -1,5 +1,5 @@
 {
   "exec": "yarn run dev",
-  "watch": ["src/*", "public/*, server.js, app.js"],
+  "watch": ["app/*", "public/*, server.js"],
   "ext": "js, html, css, json"
 }
