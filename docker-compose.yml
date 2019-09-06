@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+    api:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        networks:
+            - backend
+        restart: always
+        ports:
+            - '3000:3000'
+        volumes:
+            - './:/usr/src/app'
+        environment:
+            - ENV=1
+networks:
+    backend:
+        driver: overlay
