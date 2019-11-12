@@ -24,7 +24,7 @@
     "express-validator": "^6.2.0",
     "glob": "^7.1.4",
     "jsonschema": "^1.2.4",
-    "knex": "^0.19.3",
+    "knex": "^0.19.5",
     "luxon": "^1.17.2",
     "morgan": "~1.9.1",
     "ramda": "^0.26.1"
