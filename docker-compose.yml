@@ -4,9 +4,7 @@ services:
     api:
         build:
             context: .
-            dockerfile: ./docker/app/Dockerfile
-        networks:
-            - backend
+            dockerfile: ./Dockerfile
         restart: always
         ports:
             - '3000:3000'
@@ -14,6 +12,3 @@ services:
             - './:/usr/src/app'
         environment:
             - ENV=1
-networks:
-    backend:
-        driver: overlay

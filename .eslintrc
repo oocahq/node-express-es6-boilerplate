@@ -1,0 +1,10 @@
+{
+  "extends": ["airbnb", "plugin:jest/recommended"],
+  "rules": {
+    "semi": ["error", "never"],
+    "max-len": [1, 80, 2, {
+      "ignorePattern": "^import\\s.+\\sfrom\\s.+;$",
+      "ignoreUrls": true
+    }]
+  }
+}
